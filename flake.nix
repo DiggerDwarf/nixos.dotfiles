@@ -2,8 +2,8 @@
     description = "Someone's NixOS configuration";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-unstable";
-        nixpkgs-stable.url = "nixpkgs/nixos-25.11";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
         home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -21,7 +21,7 @@
                 ];
             };
         };
-        homeConfiguration = {
+        homeConfigurations = {
             someone = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [

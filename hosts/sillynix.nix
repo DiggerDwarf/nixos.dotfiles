@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./sillynix-hardware.nix
     ];
 
   # Bootloader.
@@ -71,8 +71,8 @@
       enable = true;
       defaultFonts = {
         monospace = [ "Maple Mono NF CN" ];
-        sansSerif = [ "Maple Mono NF" ];
-        serif = [ "Maple Mono NF" ];
+        sansSerif = [ "Maple Mono NF CN" ];
+        serif = [ "Maple Mono NF CN" ];
       };
     };
   };

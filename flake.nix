@@ -17,7 +17,7 @@
             sillynix = nixpkgs.lib.nixosSystem {
                 inherit system;
                 modules = [
-                    ./configuration.nix
+                    ./hosts/sillynix.nix
                 ];
             };
         };
@@ -25,7 +25,7 @@
             someone = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
-                    ./home.nix
+                    ./homes/someone.nix
                 ];
             };
         };

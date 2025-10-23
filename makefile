@@ -16,9 +16,9 @@ home/%:
 	home-manager switch --flake .#$*
 
 git:
-	@echo git add .
-	@echo git commit -m "update on $(DATE)
-	@echo git push
+	git add .
+	git commit -m "\"$$(date +'%d/%m/%y - %H:%M')\""
+	git push
 
 current:
 	@echo Home manager :

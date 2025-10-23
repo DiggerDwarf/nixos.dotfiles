@@ -19,7 +19,7 @@ in {
       exec-once = [
         "swww-daemon"
         "quickshell"
-        "brightnessctl s 0 hda::micmute"
+        "brightnessctl s 0 -d hda::micmute"
       ];
 
       env = [
@@ -29,11 +29,11 @@ in {
 
       general = {
         gaps_in = 5;
-        gaps_out = 20;
+        gaps_out = 10;
 
         border_size = 2;
 
-        "col.active_border" = "rgba(33ccffee) rgba(00ff9900) 45deg";
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
         resize_on_border = false;

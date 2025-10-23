@@ -95,7 +95,6 @@
      bibata-cursors
      zip unzip
      quickshell
-     hyprlock
   ];
 
   environment.variables.EDITOR = "nvim";
@@ -121,6 +120,7 @@
       defaultEditor = true;
     };
     fish.enable = true;
+    hyprlock.enable = true;
   };
 
   # List services that you want to enable:
@@ -137,6 +137,7 @@
     };
     # power saving
     tlp.enable = true;
+    hypridle.enable = true;
   };
 
   # Open ports in the firewall.

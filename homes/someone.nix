@@ -2,8 +2,9 @@
 
 {
     imports = [
-        ./../modules/hypr/hyprlock.nix
         ./../modules/hypr/hyprland.nix
+        ./../modules/hypr/hyprlock.nix
+        ./../modules/hypr/hypridle.nix
     ];
     # Home Manager needs a bit of information about you and the paths it should
     # manage.

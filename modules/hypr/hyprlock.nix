@@ -52,7 +52,7 @@ in {
 
         label = [{
             inherit monitor;
-            text = "$TIME";
+            text = " $TIME";
             font_size = 90;
             inherit font_family;
 
@@ -60,6 +60,10 @@ in {
 
             halign = "center";
             valign = "top";
+        }];
+        image = [{
+            inherit monitor;
+            path = "$HOME/Pictures/wallpapers/pink_sky.jpg";
         }];
     };
 }

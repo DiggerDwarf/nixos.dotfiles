@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   terminal = "kitty";
+  fileManager = "kitty -e yazi";
   menu = "rofi -show drun";
   cursorSize = "24";
   mainMod = "SUPER";
@@ -15,7 +16,6 @@ in {
         "HDMI-A-1, preferred, 0x0, auto"
         "eDP-1, 2880x1800@120, auto, 1.5"
       ];
-
       exec-once = [
         "swww-daemon"
         "quickshell"
@@ -143,6 +143,7 @@ in {
         # "${mainMod}, E, exec, " # file manager ??
         "${mainMod}, V, togglefloating"
         "${mainMod}, space, exec, ${menu}"
+        "${mainMod}, E, exec, ${fileManager}"
         "${mainMod}, P, pseudo"
         "${mainMod}, J, togglesplit"
         "${mainMod}, L, exec, hyprlock"

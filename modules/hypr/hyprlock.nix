@@ -61,9 +61,9 @@ in {
             halign = "center";
             valign = "top";
         }];
-        image = [{
-            inherit monitor;
-            path = "$HOME/Pictures/wallpapers/pink_sky.jpg";
-        }];
+        # image = [{
+        #     inherit monitor;
+        #     path = "$HOME/Pictures/wallpapers/pink_sky.jpg";
+        # }];
     };
 }

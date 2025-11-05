@@ -20,6 +20,12 @@
                     ./hosts/sillynix.nix
                 ];
             };
+            sillyserver = nixpkgs.lib.nixosSystem {
+                inherit system;
+                modules = [
+                    ./hosts/sillyserver.nix
+                ];
+            };
         };
         homeConfigurations = {
             someone = home-manager.lib.homeManagerConfiguration {

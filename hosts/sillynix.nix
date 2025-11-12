@@ -10,6 +10,12 @@
       ./sillynix-hardware.nix
     ];
 
+  users.users.nixosvmtest.isSystemUser = true;
+  users.users.nixosvmtest.initialPassword = "test";
+
+  users.groups.nixosvmtest = {};
+  users.users.nixosvmtest.group = "nixosvmtest";
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -114,6 +120,15 @@
       enable = true;
       xwayland.enable = true;
     };
+    wayfire = {
+      enable = true;
+      plugins = with pkgs.wayfirePlugins; [
+        wcm
+        wf-shell
+        wayfire-plugins-extra
+      ];
+    };
+    niri.enable = true;
     firefox.enable = true;
     neovim = {
       enable = true;
@@ -134,6 +149,18 @@
     };
     displayManager.ly = {
         enable = true;
+	settings = {
+	  full_color = true;
+    bg = "0x003A2759";
+	  bigclock = "en";
+	  bigclock_12hr = false;
+	  bigclock_seconds = false;
+	  animation = "gameoflife";
+	  gameoflife_frame_delay = "15";
+	  gameoflife_initial_density = "0.4";
+	  gameoflife_entropy_interval = "10";
+    gameoflife_fg = "0x004F367A";
+	};
     };
     # power saving
     tlp.enable = true;

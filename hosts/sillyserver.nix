@@ -14,6 +14,9 @@
   console.keymap = "fr";
 
   users.users = {
-    
+    root = {
+      enable = true;
+      password = "12345";
+    }
   }
 }

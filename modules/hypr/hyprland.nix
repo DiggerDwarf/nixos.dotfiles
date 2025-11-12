@@ -10,11 +10,20 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = [
-        "DP-1, preferred, 0x0, auto"
-        "DP-2, preferred, 0x0, auto"
-        "HDMI-A-1, preferred, 0x0, auto"
-        "eDP-1, 2880x1800@120, auto, 1.5"
+      monitor = let 
+        ext = {
+	  pos = { x = "120"; y = "0"; };
+	  size = { x = "1680"; y = "1050"; };
+	};
+        int = {
+	  pos = { x = "0"; y = "1050"; };
+	  size = { x = "2880"; y = "1800"; };
+	};
+      in [
+        "DP-1, ${ext.size.x}x${ext.size.y}, ${ext.pos.x}x${ext.pos.y}, auto"
+        "DP-2, ${ext.size.x}x${ext.size.y}, ${ext.pos.x}x${ext.pos.y}, auto"
+        "HDMI-A-1, ${ext.size.x}x${ext.size.y}, ${ext.pos.x}x${ext.pos.y}, auto"
+        "eDP-1, ${int.size.x}x${int.size.y}@120, ${int.pos.x}x${int.pos.y}, 1.5"
       ];
       exec-once = [
         "swww-daemon"
@@ -31,9 +40,9 @@ in {
         gaps_in = 5;
         gaps_out = 10;
 
-        border_size = 2;
+        border_size = 3;
 
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.active_border" = "rgba(8510b0ee) rgba(94a4e9ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
         resize_on_border = false;
@@ -147,6 +156,7 @@ in {
         "${mainMod}, P, pseudo"
         "${mainMod}, J, togglesplit"
         "${mainMod}, L, exec, hyprlock"
+        "${mainMod}, F, fullscreen"
 
         "${mainMod}, left, movefocus, l"
         "${mainMod}, right, movefocus, r"
